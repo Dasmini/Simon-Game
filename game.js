@@ -5,13 +5,19 @@ var level = 0;
 var started = false;
 
 
-$(document).keydown(function() {
+$(document).keydown(function(){
+  pressKey();
+});
+$("#start").click(function(){
+  pressKey()
+});
+function pressKey(){
   if (!started) {
     $("h1").text("level " + level);
     nextSequence();
     started = true;
   }
-});
+};
 
 function nextSequence() {
   userClickedpattern = [];
@@ -77,13 +83,16 @@ function checkAnswer(currentLevel) {
     wrong.play();
 
     $("h1").text("Game Over, Press Any Key to Restart");
-
+    $("#start").text("Restart")
     $("body").addClass("game-over");
     setTimeout(function() {
       $("body").removeClass("game-over");
     }, 200);
 
     $(document).keydown(function() {
+      startOver();
+    });
+    $("#start").click(function(){
       startOver();
     });
   }
