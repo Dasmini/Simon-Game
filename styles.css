@@ -3,6 +3,19 @@ body {
   background-color: #011F3F;
 }
 
+#start{
+  border-radius: 50%;
+  font-size: 2rem;
+  padding: 30px;
+  margin: 30px;
+
+}
+#start:hover{
+  background-color: #FAFDD6;
+  font-weight: bold;
+
+}
+
 #level-title {
   font-family: 'Press Start 2P', cursive;
   font-size: 3rem;
